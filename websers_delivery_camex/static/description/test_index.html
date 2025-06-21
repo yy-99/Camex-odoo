@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Camex Delivery Integration for Odoo</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    h1 {
+      border-bottom: 2px solid #ff7043;
+      padding-bottom: 10px;
+    }
+    h2 {
+      border-bottom: 1px solid #eee;
+      padding-bottom: 5px;
+      margin-top: 30px;
+    }
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+    pre {
+      background-color: #f4f4f4;
+      border: 1px solid #ddd;
+      border-left: 3px solid #ff7043;
+      font-family: monospace;
+      font-size: 15px;
+      line-height: 1.6;
+      padding: 1em 1.5em;
+      overflow: auto;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+      margin: 10px 0;
+    }
+    .highlight {
+      background: #f1f1f1;
+      border-left: 5px solid #eb290c;
+      padding: 20px;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+    .separator {
+      height: 4px;
+      background: linear-gradient(to right, #eb290c, #ff7043);
+      border-radius: 2px;
+    }
+    .license-author {
+      margin-top: 30px;
+      padding-top: 15px;
+      border-top: 1px solid #eee;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="section" style="text-align: center; background-color: #f8f9fa; border-radius: 12px; padding: 50px 0;">
+      <h1>📦 Camex Delivery Integration</h1>
+      <h3 style="color: #555;">Seamless shipping and tracking directly from Odoo</h3>
+    </div>
+
+    <div class="section" style="background: #e8f0fe; padding: 25px; border-radius: 10px;">
+      <h2>✅ Features</h2>
+      <ul style="list-style: none; padding-left: 0; font-size: 16px; color: #444;">
+        <li>🔄 Auto-generate shipments upon order confirmation</li>
+        <li>🛠️ API configuration panel inside Odoo</li>
+        <li>🗺️ Updates delivery status automatically in Odoo</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="separator"></div>
+      <h2 style="text-align: center; margin-top: 40px;">🛠️ How to Configure</h2>
+
+      <div class="highlight">
+        <ul style="margin: 0;">
+          <li>To define your cities and areas, go to Contacts → Configuration, then set up your own Base Cities and Base Areas.</li>
+        </ul>
+      </div>
+      <img src="1.png" alt="Define Cities and Areas" />
+
+      <div class="highlight">
+        Create a new Delivery Method, select the provider "CAMEX", then fill in the fields in the order shown in the image.
+      </div>
+      <img src="2.png" alt="Delivery Method Configuration 1" />
+      <img src="3.png" alt="Delivery Method Configuration 2" />
+    </div>
+
+    <div class="section">
+      <div class="separator"></div>
+      <h2 style="text-align: center; margin-top: 40px;">📍 Mapping CAMEX Areas</h2>
+
+      <div class="highlight">
+        By navigating to Contacts → CAMEX Mapping, create a mapping between the areas you previously defined and the CAMEX areas.
+      </div>
+
+      <div style="text-align: center;">
+        <img src="4.png" alt="CAMEX Mapping View 1" />
+        <img src="5.png" alt="CAMEX Mapping View 2" />
+      </div>
+    </div>
+
+    <div class="section license-author">
+      <h2>Support</h2>
+      <p>For questions, issues, or support, please contact:</p>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:support@websers.odoo.com">support@websers.odoo.com</a></li>
+        <li><strong>Website:</strong> <a href="https://websers.odoo.com/support" target="_blank">https://websers.odoo.com/support</a></li>
+      </ul>
+
+      <h2>License</h2>
+      <p>This module is licensed under the Odoo Proprietary License v1.0 (OPL-1). See <a href="https://www.odoo.com/documentation/18.0/legal/licenses/licenses.html#odoo-proprietary-license-v1-0" target="_blank">Odoo Licensing</a> for details.</p>
+
+      <h2>Author</h2>
+      <p><a href="https://websers.odoo.com" target="_blank">Websers</a></p>
+    </div>
+  </div>
+</body>
+</html>

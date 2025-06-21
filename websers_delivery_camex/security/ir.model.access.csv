@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_camex_store,access.camex.store,model_camex_store,base.group_user,1,1,1,1
+access_camex_city,access.camex.city,model_camex_city,base.group_user,1,1,1,1
+access_camex_location_mapping,access.camex.location.mapping,model_camex_location_mapping,base.group_user,1,1,1,1

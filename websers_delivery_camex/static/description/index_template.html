@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masafah SMS Integration for Odoo</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        h1 {
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        .badge a {
+            text-decoration: none;
+        }
+        .badge img {
+            vertical-align: middle;
+        }
+        /* Fix for overflowing images on small screens */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-left: 3px solid #3498db;
+            color: #333;
+            page-break-inside: avoid;
+            font-family: monospace;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 1.6em;
+            max-width: 100%;
+            overflow: auto;
+            padding: 1em 1.5em;
+            display: block;
+            word-wrap: break-word;
+        }
+        .screenshots img {
+            border: 1px solid #ddd;
+            margin-bottom: 15px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .license-author {
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section">
+            <h1>Masafah SMS Integration for Odoo</h1>
+            <p class="badge">
+                <a href="https://www.odoo.com" target="_blank"><img src="https://img.shields.io/badge/Odoo-18.0-brightgreen" alt="Odoo Version"></a>
+                <a href="https://www.odoo.com/documentation/18.0/legal/licenses/licenses.html#odoo-proprietary-license-v1-0" target="_blank"><img src="https://img.shields.io/badge/License-OPL--1-blue.svg" alt="License"></a>
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Summary</h2>
+            <p>This module integrates the Masafah SMS provider (<a href="https://client.almasafa.ly/" target="_blank">client.almasafa.ly</a>) with Odoo. It allows you to configure your Masafah account within Odoo and use it as your default SMS provider, routing messages through Masafah's API instead of Odoo's default IAP SMS service.</p>
+        </div>
+
+        <div class="section">
+            <h2>Description</h2>
+            <p>The Masafah SMS Integration module overrides Odoo's standard SMS sending mechanism. By configuring and setting a Masafah account as the 'Default SMS Provider', all outgoing SMS messages (sent individually or via mass mailing/batch features) will be sent using your Masafah credentials and credit balance. If no default Masafah account is active, Odoo will revert to its standard SMS sending behaviour (typically using IAP credits).</p>
+        </div>
+
+        <div class="section screenshots">
+            <h2>Screenshots</h2>
+            <p>Module in Apps List:</p>
+            <img src="screenshots/Masafah_001.png" alt="Masafah SMS Module in Odoo Apps">
+
+            <p>Masafah SMS Account Configuration (General Settings -> Technical -> Masafah SMS):</p>
+            <img src="screenshots/Masafah_002.png" alt="Settings Menu Path for Masafah SMS">
+            <br>
+            <img src="screenshots/Masafah_003.png" alt="Masafah SMS Accounts List View">
+            <br>
+            <img src="screenshots/Masafah_004.png" alt="Masafah SMS Account Credentials and Balance">
+
+            <p>Sending SMS from a Contact:</p>
+            <img src="screenshots/Masafah_005.png" alt="Send SMS option from Contact Actions menu">
+            <br>
+            <img src="screenshots/Masafah_006.png" alt="Send SMS Popup">
+        </div>
+
+        <div class="section">
+            <h2>Key Features</h2>
+            <ul>
+                <li><strong>Direct Masafah Integration:</strong> Send SMS via the official Masafah API.</li>
+                <li><strong>Default Provider Override:</strong> Seamlessly replaces Odoo's IAP SMS when configured as default.</li>
+                <li><strong>Single &amp; Batch Sending:</strong> Handles both individual SMS and Odoo's batch/mass SMS features (sending one-by-one via API).</li>
+                <li><strong>Account Management:</strong> Configure and store credentials for one or more Masafah accounts.</li>
+                <li><strong>Balance Check:</strong> View your current Masafah balance (package, spent, remaining) directly within the account configuration in Odoo.</li>
+                <li><strong>Connection Testing:</strong> Verify API credentials and connectivity.</li>
+                <li><strong>IAP Fallback:</strong> Odoo's standard SMS sending is used if no default Masafah account is set.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Dependencies</h2>
+            <ul>
+                <li>Odoo Modules: <code>iap</code>, <code>sms</code>, <code>phone_validation</code></li>
+                <li>Python Libraries: <code>requests</code> (usually included with Odoo)</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Installation</h2>
+            <ol>
+                <li><strong>Download:</strong> Obtain the <code>masafah_sms</code> module folder.</li>
+                <li><strong>Place in Addons:</strong> Copy the <code>masafah_sms</code> folder into your Odoo custom addons directory.</li>
+                <li><strong>Update Apps List:</strong> Restart Odoo, activate developer mode, and go to Apps -&gt; Update Apps List.</li>
+                <li><strong>Install:</strong> Search for "Masafah SMS Integration" and click "Install".</li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <h2>Configuration</h2>
+            <p>Configure your Masafah SMS account details within Odoo:</p>
+            <ol>
+                <li>Navigate to <strong>Settings</strong> &rarr; <strong>Technical</strong> &rarr; <strong>Masafah SMS</strong>.
+                    <br><em>(Alternative path based on menu structure: Settings &rarr; General Settings &rarr; Masafah SMS)</em>
+                    <br>
+                    </li>
+                <li>Click <strong>Create</strong> to add a new account configuration.
+                    <br>
+                    </li>
+                <li>Fill in the required details:
+                    <ul>
+                        <li><strong>Account Name:</strong> A recognizable name (e.g., "Masafah Main Account").</li>
+                        <li><strong>API Username:</strong> Your Masafah API username.</li>
+                        <li><strong>API Password:</strong> Your Masafah API password.</li>
+                        <li><strong>Sender ID:</strong> The Sender ID approved for your Masafah account.</li>
+                        <li><strong>Authentication URL:</strong> The Masafah API endpoint for authentication (defaults provided).</li>
+                        <li><strong>SMS API URL:</strong> The Masafah API endpoint for sending SMS (defaults provided).</li>
+                        <li><strong>Balance API URL:</strong> The Masafah API endpoint for checking balance (defaults provided).</li>
+                        <li><strong>Default SMS Provider:</strong> <strong>Crucially, check this box</strong> to make this account the active provider for sending SMS. Only one account should be marked as default.</li>
+                    </ul>
+                     </li>
+                <li><strong>Test Connection:</strong> Click the <strong>Test Authentication</strong> button to verify your Username/Password and Auth URL.</li>
+                <li><strong>Check Balance:</strong>
+                    <ul>
+                        <li>The <strong>Account Balance</strong> section displays the last checked balance details (Package, Spent, Balance) and the time of the check.</li>
+                        <li>Click the <strong>Refresh Balance</strong> button (🔄 icon) next to the balance display to fetch the latest balance information from Masafah.</li>
+                    </ul>
+                </li>
+                <li><strong>Save</strong> the configuration.</li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <h2>Usage</h2>
+            <ul>
+                <li><strong>Automatic Sending:</strong> Once a Masafah account is saved and marked as the <strong>Default SMS Provider</strong>, any SMS sent from Odoo (e.g., via Contact form, Sales Order confirmation, SMS Marketing app) will automatically use this account.
+                    <br>
+                     </li>
+                <li><strong>Balance Monitoring:</strong> Periodically check the balance on the configuration screen using the <strong>Refresh Balance</strong> button to ensure sufficient credits.</li>
+                <li><strong>Logs:</strong> Sent message history and status can be viewed in the standard Odoo Settings -&gt; Technical -&gt; Email -&gt; SMS Messages menu.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Important Notes</h2>
+            <ul>
+                <li>The Masafah API used by this module sends messages one recipient at a time. Therefore, even when using Odoo's batch sending features, the module will make individual API calls for each recipient in the batch.</li>
+                <li>Ensure your Masafah account has sufficient balance and is active.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Technical Details</h2>
+            <ul>
+                <li>The module defines a <code>masafah.sms.account</code> model inheriting from <code>iap.account</code> to store credentials and manage the connection.</li>
+                <li>It implements the necessary methods (<code>_send_sms</code>, <code>_send_sms_batch</code>) required by Odoo's SMS framework (leveraging <code>iap.account</code> features) to route messages through the configured default Masafah account.</li>
+                <li>API communication uses the <code>requests</code> Python library. Error handling and logging are included for troubleshooting.</li>
+            </ul>
+        </div>
+
+        <div class="section license-author">
+            <h2>Support</h2>
+            <p>For questions, issues, or support, please contact:</p>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:support@websers.odoo.com">support@websers.odoo.com</a></li>
+                <li><strong>Website:</strong> <a href="https://websers.odoo.com/support" target="_blank">https://websers.odoo.com/support</a></li>
+            </ul>
+
+            <h2>License</h2>
+            <p>This module is licensed under the Odoo Proprietary License v1.0 (OPL-1). See <a href="https://www.odoo.com/documentation/18.0/legal/licenses/licenses.html#odoo-proprietary-license-v1-0" target="_blank">Odoo Licensing</a> for details.</p>
+
+            <h2>Author</h2>
+            <p><a href="https://websers.odoo.com" target="_blank">Websers</a></p>
+        </div>
+    </div>
+</body>
+</html>

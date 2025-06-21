@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_base_city,access.base.city,model_base_city,base.group_user,1,1,1,1
+access_base_area,access.base.area,model_base_area,base.group_user,1,1,1,1
+access_base_location_mapping,access.base_location_mapping,model_base_location_mapping,base.group_user,1,1,1,1
